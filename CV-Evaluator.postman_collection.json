@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "1d6a0207-8fb8-45e2-8d6b-042ef1107b81",
+		"name": "CV Evaluator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4925335",
+		"_collection_link": "https://onebox-4446.postman.co/workspace/Onebox-Workspace~360e7d59-5105-44bf-8323-7dbce4a6ee36/collection/4925335-1d6a0207-8fb8-45e2-8d6b-042ef1107b81?action=share&source=collection_link&creator=4925335"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "candidate_name",
+							"value": "Bramantio Galih Arintoko",
+							"type": "text"
+						},
+						{
+							"key": "candidate_email",
+							"value": "bmantio20@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "cv_file",
+							"type": "file",
+							"src": "/C:/Users/ThinkPad/Downloads/CV_New_Bramantio_2025.pdf"
+						},
+						{
+							"key": "project_file",
+							"type": "file",
+							"src": "/C:/Users/ThinkPad/Downloads/Portfolio_Bramantio Galih Arintoko_compressed.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/evaluate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"upload_id\":21,\r\n  \"job_id\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/evaluate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evaluate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/result/38",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/result/38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"result",
+						"38"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
